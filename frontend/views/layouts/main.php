@@ -38,16 +38,19 @@ AppAsset::register($this);
         ['label' => 'Home', 'url' => ['/site/index']],
         ['label' => 'About', 'url' => ['/site/about']],
         ['label' => 'Contact', 'url' => ['/site/contact']],
+        ['label' => 'Register', 'url' => ['/user/signup']],
+        ['label' => 'Authors', 'url' => ['/author/index']],
+
     ];
-    if (Yii::$app->user->isGuest) {
+/*    if (Yii::$app->user->isGuest) {
         $menuItems[] = ['label' => 'Signup', 'url' => ['/site/signup']];
-    }
+    }*/
 
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav me-auto mb-2 mb-md-0'],
         'items' => $menuItems,
     ]);
-    if (Yii::$app->user->isGuest) {
+   /* if (Yii::$app->user->isGuest) {
         echo Html::tag('div',Html::a('Login',['/site/login'],['class' => ['btn btn-link login text-decoration-none']]),['class' => ['d-flex']]);
     } else {
         echo Html::beginForm(['/site/logout'], 'post', ['class' => 'd-flex'])
@@ -56,7 +59,8 @@ AppAsset::register($this);
                 ['class' => 'btn btn-link logout text-decoration-none']
             )
             . Html::endForm();
-    }
+    }*/
+
     NavBar::end();
     ?>
 </header>
